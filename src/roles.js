@@ -1,4 +1,4 @@
-const { Gitlab } = require('@gitbeaker/node');
+const { Gitlab } = require('@gitbeaker/rest');
 const roleUtil = require('./roleUtil');
 
 class Roles {
@@ -59,7 +59,7 @@ class Roles {
      * https://github.com/jdalrymple/node-gitlab/blob/3.6.0/src/services/Users.js#L29
      * https://github.com/gitlabhq/gitlabhq/blob/master/doc/api/users.md#for-normal-users-1
      */
-    return this.api.Users.current(
+    return this.api.Users.showCurrentUser(
     ).then((res) => {
       let roleList = [];
 
